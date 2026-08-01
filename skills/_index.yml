@@ -1,0 +1,12 @@
+generated: '2026-07-20'
+method: generated
+source: fhir/patients-know-best-facade-capabilitystatement.json
+skills:
+- file: patients-know-best-retrieve-patient-record.md
+  name: Retrieve a patient's PKB health record
+  api: fhir/patients-know-best-facade-capabilitystatement.json
+  operations: [Patient.read, Patient.search, Observation.search, DocumentReference.search, Appointment.search]
+- file: patients-know-best-send-questionnaire.md
+  name: Send a questionnaire and collect responses
+  api: fhir/patients-know-best-facade-capabilitystatement.json
+  operations: [Questionnaire.search, Questionnaire.$send-questionnaire-request, QuestionnaireResponse.search]

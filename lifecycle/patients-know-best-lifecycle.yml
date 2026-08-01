@@ -1,0 +1,19 @@
+generated: '2026-07-20'
+method: searched
+source: https://patientsknowbest.com/fhir/
+versioning:
+  scheme: fhir-version
+  current: STU3 (3.0.2)
+  docs: https://wiki.patientsknowbest.com/space/api/3363602489/FHIR%C2%AE+APIs
+  notes: >-
+    API version is tied to the HL7 FHIR release; the Facade server implements
+    FHIR STU3 (3.0.2). New APIs are prioritised via a Technical User Group
+    (TUG) with integrating organisations.
+release_notes: https://wiki.patientsknowbest.com/space/REL
+status_page: https://www.pkbstatus.com/
+roadmap: https://wiki.patientsknowbest.com/space/api
+sla:
+  notes: >-
+    No public SLA/uptime target published; availability is tracked on the
+    status page (pkbstatus.com).
+deprecated_operations: []

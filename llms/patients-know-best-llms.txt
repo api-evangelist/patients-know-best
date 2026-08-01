@@ -1,0 +1,31 @@
+# Patients Know Best
+
+> Patients Know Best (PKB) operates the world's largest personal health record, with 7M+ registered patients across the NHS. Its HL7 FHIR STU3 (3.0.2) "Facade" API, conforming to NHS CareConnect profiles and secured with OAuth 2.0 client credentials, exposes patient demographics, documents, observations, appointments, consent, questionnaires and read receipts to integration partners.
+
+## APIs
+
+- [PKB Facade FHIR API](https://wiki.patientsknowbest.com/space/api/3363602489/FHIR%C2%AE+APIs): HL7 FHIR STU3 server at https://my.patientsknowbest.com/fhir
+
+## Specs
+
+- [FHIR CapabilityStatement](https://my.patientsknowbest.com/fhir/metadata): machine-readable conformance (FHIR 3.0.2, application/fhir+json)
+
+## Docs
+
+- [FHIR API wiki](https://wiki.patientsknowbest.com/space/api): developer documentation
+- [FHIR Conformance](https://pkbdev.atlassian.net/wiki/spaces/api/pages/3363602541/FHIR+Conformance): capability statements, code systems, profiles, operations
+- [Leading with FHIR](https://patientsknowbest.com/fhir/): FHIR programme overview and API status
+- [Release notes](https://wiki.patientsknowbest.com/space/REL): dated changelog
+- [Manual / help](https://manual.patientsknowbest.com/): end-user and admin manual
+- [Partners](https://patientsknowbest.com/partners/): integration partners
+
+## Auth
+
+- OAuth 2.0 client-credentials; bearer access token on every FHIR request. Integration setup: integrations@patientsknowbest.com
+
+## Operational
+
+- [Status page](https://www.pkbstatus.com/)
+- [Vulnerability disclosure (security.txt)](https://my.patientsknowbest.com/.well-known/security.txt): security@patientsknowbest.com
+- [Privacy statement](https://patientsknowbest.com/privacy-statement/)
+- [Blog](https://blog.patientsknowbest.com/)

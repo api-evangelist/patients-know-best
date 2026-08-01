@@ -1,0 +1,38 @@
+Vulnerability Disclosure Policy
+
+At Patients Know Best, the security and privacy of our customer data is of the utmost importance to us. We take the protection of our customers' personal information very seriously and are committed to working with the security research community to identify and address potential vulnerabilities in a responsible and timely manner.
+
+Scope
+
+This policy applies to all of Patients Know Best's operated assets, including but not limited to our electronic health record (EHR) system and any other products, services, websites, and web applications that we operate, including the domains: 
+
+    *.patientsknowbest.com
+
+    *.pkb.io
+
+Responsible Disclosure
+
+If you have discovered a potential security vulnerability in one of our assets, we ask that you report it to us in accordance with this policy. To report a vulnerability, please send an email to security@patientsknowbest.com with the following information:
+
+    A description of the vulnerability and the potential impact
+
+    Steps to reproduce the vulnerability
+
+    Any supporting information or proof-of-concept code that can help us reproduce and evaluate the vulnerability
+
+    The severity level of the vulnerability according to CVSS v3.1 standards, please consult https://www.first.org/cvss/calculator/3.1 if you are unsure.
+
+We accept reports of vulnerabilities that have critical, high, and medium severity level.
+We ask that you do not publicly disclose the vulnerability or exploit it until we have had a chance to address the issue. We will make every effort to acknowledge receipt of your report within 72 hours, and we will work with you to resolve the issue as quickly as possible.
+
+In particular, we ask that researchers give special attention to vulnerabilities that may compromise the security or privacy of our customer data. Any vulnerabilities of this nature will be given the highest priority for remediation.
+
+Legal
+
+Please note that any activities conducted in violation of this policy may be against the law of the country you are based in. Patients Know Best will fully cooperate with any law enforcement agencies investigating any such activities.
+
+By reporting a vulnerability to us under this policy, you agree to comply with all applicable laws and regulations of your country.
+
+Changes
+
+Patients Know Best reserves the right to modify this policy at any time.

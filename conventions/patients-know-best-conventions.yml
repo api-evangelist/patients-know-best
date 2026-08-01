@@ -1,0 +1,53 @@
+generated: '2026-07-20'
+method: derived
+source: fhir/patients-know-best-facade-capabilitystatement.json
+authentication:
+  style: oauth2-bearer
+  flow: clientCredentials
+  ref: authentication/patients-know-best-authentication.yml
+media_type:
+  request: application/fhir+json
+  response: application/fhir+json
+  accept_unknown: 'no'
+search:
+  style: fhir-rest-search
+  pattern: GET /{ResourceType}?param=value
+  common_params:
+  - patient (reference)
+  - date (date)
+  - category (token)
+  - identifier (token)
+  note: >-
+    Patient searches require the NHS number identifier; DiagnosticReport
+    searches require the category parameter (per CapabilityStatement rules).
+pagination:
+  style: fhir-bundle-paging
+  container: Bundle (type searchset)
+  navigation: Bundle.link (relation self/next/previous) with _count page size
+identifiers:
+  rule: >-
+    Every FHIR identifier must provide BOTH a system and a value; a resource
+    missing either fails processing with an OperationOutcome exception.
+  canonical_namespace: http://fhir.patientsknowbest.com/
+versioning:
+  ref: lifecycle/patients-know-best-lifecycle.yml
+  scheme: fhir-version (STU3 / 3.0.2)
+error_envelope:
+  ref: errors/patients-know-best-problem-types.yml
+  resource: OperationOutcome
+idempotency:
+  supported: false
+  note: >-
+    No idempotency-key mechanism is documented; FHIR read/search operations
+    are naturally idempotent, and create/update semantics follow standard
+    FHIR RESTful conventions (PUT is idempotent by resource id).
+rate_limiting:
+  documented: false
+custom_operations:
+- purview
+- read-receipt-query
+- group
+- generate-invitation-tokens
+- date-of-last-data-point
+- status-query
+- send-questionnaire-request

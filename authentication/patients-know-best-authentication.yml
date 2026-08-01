@@ -1,0 +1,25 @@
+generated: '2026-07-20'
+method: searched
+source: https://patientsknowbest.com/fhir/
+docs: https://wiki.patientsknowbest.com/space/api
+summary:
+  types:
+  - oauth2
+  oauth2_flows:
+  - clientCredentials
+  notes: >-
+    The PKB FHIR API is secured with OAuth 2.0. Partner/system integrations
+    use the client-credentials (system-to-system) workflow to obtain a
+    bearer access token, which is presented on each FHIR request. OAuth 2.0
+    support was released April 2020 with further enhancements June 2020. The
+    published FHIR CapabilityStatement does not enumerate an oauth2 security
+    scheme block, so token and authorization endpoints are provisioned per
+    integrating organisation rather than advertised in metadata.
+schemes:
+- name: OAuth2ClientCredentials
+  type: oauth2
+  flow: clientCredentials
+  bearer: true
+  sources:
+  - https://patientsknowbest.com/fhir/
+  applied_to: all FHIR resource and operation endpoints

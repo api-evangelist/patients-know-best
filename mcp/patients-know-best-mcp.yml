@@ -1,0 +1,61 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: fhir/patients-know-best-facade-capabilitystatement.json
+note: >-
+  No official Patients Know Best MCP server was found. This is a CANDIDATE
+  tool list derived from the PKB Facade FHIR CapabilityStatement — one tool
+  per FHIR search/read interaction and custom operation. All PKB API calls
+  require an OAuth 2.0 client-credentials bearer token.
+server:
+  name: patients-know-best
+  transport: http
+tools:
+- name: search_appointments
+  description: Search a patient's appointments (params patient, date)
+  source_operation: fhir/patients-know-best-facade-capabilitystatement.json#Appointment.search
+- name: search_communications
+  description: Search a patient's messages/communications (params patient, sent)
+  source_operation: fhir/patients-know-best-facade-capabilitystatement.json#Communication.search
+- name: search_consents
+  description: Search a patient's consent records (param patient)
+  source_operation: fhir/patients-know-best-facade-capabilitystatement.json#Consent.search
+- name: search_diagnostic_reports
+  description: Search a patient's diagnostic reports (params category, patient, date)
+  source_operation: fhir/patients-know-best-facade-capabilitystatement.json#DiagnosticReport.search
+- name: search_document_references
+  description: Search a patient's documents (params patient, created, document-status, indexed, source-organisation)
+  source_operation: fhir/patients-know-best-facade-capabilitystatement.json#DocumentReference.search
+- name: search_encounters
+  description: Search a patient's encounters (params patient, date)
+  source_operation: fhir/patients-know-best-facade-capabilitystatement.json#Encounter.search
+- name: search_observations
+  description: Search a patient's observations/results (params category, patient, date)
+  source_operation: fhir/patients-know-best-facade-capabilitystatement.json#Observation.search
+- name: read_patient
+  description: Read a patient record; search by NHS number identifier
+  source_operation: fhir/patients-know-best-facade-capabilitystatement.json#Patient.read
+- name: read_organization
+  description: Read an organization record
+  source_operation: fhir/patients-know-best-facade-capabilitystatement.json#Organization.read
+- name: read_practitioner
+  description: Read a practitioner record
+  source_operation: fhir/patients-know-best-facade-capabilitystatement.json#Practitioner.read
+- name: search_questionnaires
+  description: Search/read questionnaires (param publisher-reference)
+  source_operation: fhir/patients-know-best-facade-capabilitystatement.json#Questionnaire.search
+- name: search_questionnaire_responses
+  description: Search a patient's questionnaire responses (params authored, based-on, patient, questionnaire)
+  source_operation: fhir/patients-know-best-facade-capabilitystatement.json#QuestionnaireResponse.search
+- name: read_receipt_query
+  description: Query read receipts for a DocumentReference (custom operation)
+  source_operation: fhir/patients-know-best-facade-capabilitystatement.json#DocumentReference.$read-receipt-query
+- name: generate_invitation_tokens
+  description: Generate patient invitation tokens for an Organization (custom operation)
+  source_operation: fhir/patients-know-best-facade-capabilitystatement.json#Organization.$generate-invitation-tokens
+- name: patient_status_query
+  description: Query a patient's registration status (custom operation)
+  source_operation: fhir/patients-know-best-facade-capabilitystatement.json#Patient.$status-query
+- name: send_questionnaire_request
+  description: Send a questionnaire request to a patient (custom operation)
+  source_operation: fhir/patients-know-best-facade-capabilitystatement.json#Questionnaire.$send-questionnaire-request

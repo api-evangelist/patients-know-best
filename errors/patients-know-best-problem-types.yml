@@ -1,0 +1,44 @@
+generated: '2026-07-20'
+method: derived
+format: fhir-operationoutcome
+source: fhir/patients-know-best-facade-capabilitystatement.json
+envelope:
+  resource_type: OperationOutcome
+  media_type: application/fhir+json
+  fields:
+  - issue[].severity   # fatal | error | warning | information
+  - issue[].code       # FHIR issue-type code
+  - issue[].diagnostics
+  - issue[].details
+notes: >-
+  As a FHIR STU3 server, PKB returns an OperationOutcome resource (not an
+  RFC 9457 problem+json body) on error. A documented conformance rule is
+  that every identifier must carry both a system and a value; a resource
+  missing either fails processing with an OperationOutcome exception.
+problems:
+- status: 400
+  code: invalid
+  title: Bad Request
+  detail: >-
+    Malformed request or invalid FHIR resource; e.g. an identifier missing
+    its system or value property.
+- status: 401
+  code: security
+  title: Unauthorized
+  detail: Missing or invalid OAuth 2.0 bearer access token.
+- status: 403
+  code: forbidden
+  title: Forbidden
+  detail: Authenticated client lacks permission for the requested patient record or operation.
+- status: 404
+  code: not-found
+  title: Not Found
+  detail: The requested FHIR resource or patient record does not exist or is not accessible.
+- status: 422
+  code: processing
+  title: Unprocessable Entity
+  detail: FHIR resource failed profile/business-rule validation (CareConnect profile constraint).
+- status: 500
+  code: exception
+  title: Internal Server Error
+  detail: Unexpected server error processing the FHIR request.

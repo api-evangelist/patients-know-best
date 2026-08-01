@@ -1,0 +1,95 @@
+generated: '2026-07-20'
+method: derived
+source: fhir/patients-know-best-facade-capabilitystatement.json
+standard: HL7 FHIR STU3 (3.0.2)
+canonical_namespace: http://fhir.patientsknowbest.com/
+note: >-
+  Entities are HL7 FHIR STU3 resources exposed by the PKB Facade server.
+  Relationships are FHIR reference elements; Patient is the aggregate root of
+  every clinical record and nearly all resources reference it.
+entities:
+- name: Patient
+  interactions: [read, search-type]
+  search_params: [identifier]
+  key: NHS number identifier (system + value required)
+- name: Person
+  interactions: []
+- name: Practitioner
+  interactions: [read]
+- name: Organization
+  interactions: [read]
+- name: Appointment
+  interactions: [search-type]
+  search_params: [patient, date]
+- name: Communication
+  interactions: [search-type]
+  search_params: [patient, sent]
+- name: Consent
+  interactions: [search-type]
+  search_params: [patient]
+- name: DiagnosticReport
+  interactions: [search-type]
+  search_params: [category, patient, date]
+- name: DocumentReference
+  interactions: [search-type]
+  search_params: [created, document-status, indexed, patient, source-organisation]
+- name: Encounter
+  interactions: [search-type]
+  search_params: [patient, date]
+- name: Observation
+  interactions: [search-type]
+  search_params: [category, patient, date]
+- name: Questionnaire
+  interactions: [read, search-type]
+  search_params: [publisher-reference]
+- name: QuestionnaireResponse
+  interactions: [search-type]
+  search_params: [authored, based-on, patient, questionnaire]
+- name: ProcedureRequest
+  interactions: [read]
+- name: NamingSystem
+  interactions: [search-type]
+  search_params: [value]
+- name: OperationDefinition
+  interactions: [read]
+relationships:
+- from: Appointment
+  to: Patient
+  type: belongs_to
+  via: patient
+- from: Communication
+  to: Patient
+  type: belongs_to
+  via: patient
+- from: Consent
+  to: Patient
+  type: belongs_to
+  via: patient
+- from: DiagnosticReport
+  to: Patient
+  type: belongs_to
+  via: patient
+- from: DocumentReference
+  to: Patient
+  type: belongs_to
+  via: patient
+- from: DocumentReference
+  to: Organization
+  type: belongs_to
+  via: source-organisation
+- from: Encounter
+  to: Patient
+  type: belongs_to
+  via: patient
+- from: Observation
+  to: Patient
+  type: belongs_to
+  via: patient
+- from: QuestionnaireResponse
+  to: Patient
+  type: belongs_to
+  via: patient
+- from: QuestionnaireResponse
+  to: Questionnaire
+  type: belongs_to
+  via: questionnaire
