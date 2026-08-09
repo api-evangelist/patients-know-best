@@ -13,18 +13,15 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/patients-know-best.png
 name: Patients Know Best
-description: >-
-  Patients Know Best (PKB) is a UK health-technology company operating what it
-  describes as the world's largest personal health record, with more than seven
-  million registered patients across the NHS and other health systems. The
-  platform lets patients hold, view and share their medical records, messages,
-  test results, care plans and questionnaires with clinicians and carers across
-  web, mobile and the NHS App. For integrators, PKB publishes a HL7 FHIR STU3
-  (3.0.2) API — the "Facade" FHIR server at my.patientsknowbest.com/fhir — that
-  conforms to the NHS CareConnect profiles and exposes patient demographics,
-  documents, observations, appointments, consent, questionnaires and read
-  receipts, secured with OAuth 2.0 client-credentials. PKB was surfaced as a
-  Seedcamp portfolio company and enriched into the API Evangelist network.
+description: Patients Know Best (PKB) is a UK health-technology company operating what it describes as
+  the world's largest personal health record, with more than seven million registered patients across
+  the NHS and other health systems. The platform lets patients hold, view and share their medical records,
+  messages, test results, care plans and questionnaires with clinicians and carers across web, mobile
+  and the NHS App. For integrators, PKB publishes a HL7 FHIR STU3 (3.0.2) API — the "Facade" FHIR server
+  at my.patientsknowbest.com/fhir — that conforms to the NHS CareConnect profiles and exposes patient
+  demographics, documents, observations, appointments, consent, questionnaires and read receipts, secured
+  with OAuth 2.0 client-credentials. PKB was surfaced as a Seedcamp portfolio company and enriched into
+  the API Evangelist network.
 url: https://raw.githubusercontent.com/api-evangelist/patients-know-best/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -34,7 +31,7 @@ x-tier: profiled
 x-tier-reason: has-fhir-api
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-08-08'
 x-enrichment:
   date: '2026-07-20'
   status: enriched
@@ -53,13 +50,11 @@ tags:
 - Medical Records
 apis:
 - name: PKB Facade FHIR API
-  description: >-
-    HL7 FHIR STU3 (3.0.2) "Facade" server exposing Patients Know Best personal
-    health record data — Patient, Appointment, Communication, Consent,
-    DiagnosticReport, DocumentReference, Encounter, Observation, Questionnaire
-    and QuestionnaireResponse resources — conforming to NHS CareConnect
-    profiles, plus custom operations for purview, read-receipt queries and
-    invitation-token generation. Secured with OAuth 2.0 client credentials.
+  description: HL7 FHIR STU3 (3.0.2) "Facade" server exposing Patients Know Best personal health record
+    data — Patient, Appointment, Communication, Consent, DiagnosticReport, DocumentReference, Encounter,
+    Observation, Questionnaire and QuestionnaireResponse resources — conforming to NHS CareConnect profiles,
+    plus custom operations for purview, read-receipt queries and invitation-token generation. Secured
+    with OAuth 2.0 client credentials.
   humanURL: https://wiki.patientsknowbest.com/space/api/3363602489/FHIR%C2%AE+APIs
   baseURL: https://my.patientsknowbest.com/fhir
   tags:
@@ -135,3 +130,7 @@ common:
   url: https://my.patientsknowbest.com/.well-known/security.txt
 - type: AgentSkill
   url: skills/_index.yml
+- type: Sandbox
+  url: sandbox/patients-know-best-sandbox.yml
+x-merged-from:
+- patientsknowbest

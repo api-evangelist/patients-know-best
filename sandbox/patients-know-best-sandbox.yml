@@ -1,0 +1,17 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.pkbstatus.com/
+docs: https://wiki.patientsknowbest.com/space/api
+notes: >-
+  Patients Know Best operates dedicated non-production environments for integration
+  testing, including a UK Sandbox (listed on the status page) reachable at
+  sandbox.patientsknowbest.com and a Canada UAT environment. Access is credentialed
+  and provisioned to onboarded integration partners; no public self-serve test
+  cards/tokens are published, so none are invented here.
+environments:
+- name: UK Sandbox
+  url: https://sandbox.patientsknowbest.com/
+  purpose: FHIR / integration testing against a non-production dataset
+- name: Canada UAT
+  purpose: user acceptance testing environment (listed on status page)
+test_credentials: partner-provisioned
