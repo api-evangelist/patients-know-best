@@ -2,11 +2,9 @@ generated: '2026-07-20'
 method: derived
 status: candidate
 source: fhir/patients-know-best-facade-capabilitystatement.json
-note: >-
-  No official Patients Know Best MCP server was found. This is a CANDIDATE
-  tool list derived from the PKB Facade FHIR CapabilityStatement — one tool
-  per FHIR search/read interaction and custom operation. All PKB API calls
-  require an OAuth 2.0 client-credentials bearer token.
+note: No official Patients Know Best MCP server was found. This is a CANDIDATE tool list derived from
+  the PKB Facade FHIR CapabilityStatement — one tool per FHIR search/read interaction and custom operation.
+  All PKB API calls require an OAuth 2.0 client-credentials bearer token.
 server:
   name: patients-know-best
   transport: http
@@ -59,3 +57,9 @@ tools:
 - name: send_questionnaire_request
   description: Send a questionnaire request to a patient (custom operation)
   source_operation: fhir/patients-know-best-facade-capabilitystatement.json#Questionnaire.$send-questionnaire-request
+deployment:
+  mode: none
+  verified: derived
+  tools: 16
+  checked: '2026-08-12'
+  source: catalog MCP census
